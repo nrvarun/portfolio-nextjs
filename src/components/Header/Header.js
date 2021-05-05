@@ -3,7 +3,7 @@ import Link from "next/link";
 const Header = () => {
   return (
     <header className="header">
-      <ul className="d-flex justify-content-between align-items-center">
+      <ul className="flex flex-col items-center justify-center">
         <li>
           <ul className="nav-list">
             <li>

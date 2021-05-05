@@ -1,7 +1,7 @@
 import Content from "@components/content";
-import Footer from "@components/Global/Footer";
-import Header from "@components/Global/Header";
-import Lines from "@components/Global/Lines";
+import Footer from "@components/Footer";
+import Header from "@components/Header";
+import Lines from "@components/Lines";
 
 const Landing = () => {
   return (
