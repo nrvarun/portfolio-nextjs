@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="px-4 py-2">
+    <header className="px-4 py-2 fixed top-0 left-0 right-0">
       <ul className="flex flex-row items-center">
         <li className="w-1/2">
           <ul className="flex">
