@@ -1,13 +1,13 @@
+import style from "./footer.module.scss";
+
 import React from "react";
 
-class Footer extends React.Component {
-  render() {
-    return (
-      <footer className="footer text-center">
-        <p className="footer-copyright">© 2019 | All rights reserved.</p>
-      </footer>
-    );
-  }
-}
+const Footer = () => {
+  return (
+    <footer className={style.wrapper}>
+      <p className={style.copyright}>© 2019 | All rights reserved.</p>
+    </footer>
+  );
+};
 
 export default Footer;

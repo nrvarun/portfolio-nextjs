@@ -1,0 +1,81 @@
+.navLink {
+  &,
+  &:hover {
+    color: #0d143a;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    position: relative;
+    text-transform: capitalize;
+    letter-spacing: 0.2px;
+    font-size: 12px;
+    display: inline-block;
+    position: relative;
+
+    @media (min-width: 375px) {
+      font-size: 14px;
+    }
+
+    &::after {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      content: "";
+      width: 95%;
+      height: 1px;
+      background-color: #0d143a;
+      transition: transform 0.4s ease;
+      transform-origin: left;
+      transform: scaleX(0);
+    }
+  }
+
+  &:hover {
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+
+  @media (min-width: 992px) {
+    &,
+    &:hover {
+      font-size: 16px;
+    }
+  }
+
+  &--mobile {
+    &,
+    &:hover {
+      color: #ffffff;
+      font-family: "Roboto", sans-serif;
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 0.3px;
+    }
+  }
+}
+
+.activeLink {
+  text-decoration: line-through !important;
+}
+
+@keyframes main-link-hover {
+  0% {
+    transform: scaleX(1);
+    transform-origin: right center;
+  }
+
+  50% {
+    transform: scaleX(0);
+    transform-origin: right center;
+  }
+
+  51% {
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+
+  100% {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+}

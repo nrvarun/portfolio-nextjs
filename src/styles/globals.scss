@@ -1,0 +1,28 @@
+.section-heading {
+  opacity: 0.08;
+  color: #333333;
+  font-family: "lato", sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+
+  @media (min-width: 767px) {
+    font-size: 125px;
+  }
+
+  @media (min-width: 992px) {
+    font-size: 175px;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 225px;
+  }
+
+  &.about {
+    margin: -60px 0 0 0;
+  }
+}
