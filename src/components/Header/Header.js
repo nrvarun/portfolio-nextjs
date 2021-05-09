@@ -1,8 +1,9 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
+
+import SocialLinks from "./SocialLinks";
 
 import style from "./header.module.scss";
-
-import { useRouter } from "next/router";
 
 const Header = () => {
   const router = useRouter();
@@ -48,28 +49,7 @@ const Header = () => {
           </ul>
         </li>
         <li className="w-1/2 flex">
-          <ul className="flex ml-auto">
-            <li className="mr-4">
-              <a
-                className={style.navLink}
-                href="https://github.com/nrvarun/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                github
-              </a>
-            </li>
-            <li>
-              <a
-                className={style.navLink}
-                href="https://www.linkedin.com/in/varunnr/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                linkedin
-              </a>
-            </li>
-          </ul>
+          <SocialLinks />
         </li>
       </ul>
     </header>
