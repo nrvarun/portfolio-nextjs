@@ -22,9 +22,9 @@ const about = () => {
             </h4>
             <button
               onClick={goBack}
-              className="cursor-pointer font-roboto text-1xl"
+              className="cursor-pointer font-roboto text-1xl px-3 py-2 rounded mb-2 bg-gray-600 text-white"
             >
-              <p className="text-dark mb-2 font-roboto text-gray-600 text-sm">
+              <p className="text-dark font-roboto text-white text-sm">
                 Go Back!
               </p>
             </button>

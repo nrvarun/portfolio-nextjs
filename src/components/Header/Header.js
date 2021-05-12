@@ -9,7 +9,7 @@ const Header = () => {
   const router = useRouter();
 
   return (
-    <header className="px-4 py-2 fixed top-0 left-0 right-0">
+    <header className="p-4 lg:px-6 fixed top-0 left-0 right-0">
       <ul className="flex flex-row items-center">
         <li className="w-1/2">
           <ul className="flex">
@@ -36,13 +36,13 @@ const Header = () => {
               </Link>
             </li>
             <li className="mr-4">
-              <Link href="/projects">
+              <Link href="/blogs">
                 <a
                   className={`${style.navLink} ${
-                    router.pathname === "/projects" ? style.activeLink : ""
+                    router.pathname === "/blogs" ? style.activeLink : ""
                   }`}
                 >
-                  Projects
+                  Blogs
                 </a>
               </Link>
             </li>

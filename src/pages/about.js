@@ -7,7 +7,7 @@ const about = () => {
   return (
     <Landing>
       <section className="flex flex-col items-center h-full">
-        <div className="relative m-auto w-1/2">
+        <div className="relative m-auto w-1/2 lg:w-1/3">
           <h2 className="section-heading -mt-10 pointer-events-none">
             {data?.Heading}
           </h2>

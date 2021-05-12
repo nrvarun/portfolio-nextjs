@@ -2,8 +2,8 @@ import React from "react";
 
 const Content = ({ heading = "", subheading = "", desc = "" }) => {
   return (
-    <div className="max-w-md m-auto">
-      <div className="relative mb-4 mb-md-5 lg:mx-5">
+    <div className="max-w-md m-auto lg:mx-5">
+      <div className="relative mb-4 mb-md-5">
         <h1 className="font-roboto uppercase font-bold text-4xl md:text-6xl lg:text-7xl">
           {heading}
         </h1>
