@@ -13,16 +13,17 @@ export default function Home() {
     <Landing>
       <section className="flex flex-col items-center h-full">
         <div className="m-auto">
-          {/* <Lines /> */}
-          {isError ? (
-            <p>Error fetching Data</p>
-          ) : (
-            <Content
-              heading={Heading}
-              subheading={SubHeading}
-              desc={Description}
-            />
-          )}
+          <div className="container m-auto">
+            {isError ? (
+              <p>Error fetching Data</p>
+            ) : (
+              <Content
+                heading={Heading}
+                subheading={SubHeading}
+                desc={Description}
+              />
+            )}
+          </div>
         </div>
       </section>
     </Landing>

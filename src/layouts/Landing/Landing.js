@@ -3,7 +3,7 @@ import Header from "@components/Header";
 
 import Head from "next/head";
 
-export default function Home({ children }) {
+export default function Home({ children, noFooter }) {
   return (
     <>
       <Head>
@@ -21,7 +21,7 @@ export default function Home({ children }) {
 
       <Header />
       <main>{children}</main>
-      <Footer />
+      {!noFooter && <Footer />}
     </>
   );
 }
