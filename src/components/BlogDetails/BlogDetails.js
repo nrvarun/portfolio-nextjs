@@ -1,4 +1,5 @@
 import MarkDownRenderer from "@components/MarkdownRenderer";
+import { API } from "Libs/Utils";
 import style from "./blogdetails.module.scss";
 
 const BlogDetails = ({ blog }) => {
@@ -42,6 +43,13 @@ const BlogDetails = ({ blog }) => {
                 <h4
                   className="font-poppins font-semibold mb-2 text-gray-900 text-xl md:text-1xl lg:text-4xl capitalize"
                   {...props}
+                />
+              ),
+              img: ({ node, ...props }) => (
+                <img
+                  className="w-auto h-auto my-10 md:my-20"
+                  src={`${API.host}${props.src}`}
+                  prop={JSON.stringify(props)}
                 />
               ),
               p: ({ node, ...props }) => (
