@@ -2,6 +2,39 @@ import MarkDownRenderer from "@components/MarkdownRenderer";
 import { API } from "Libs/Utils";
 import style from "./blogdetails.module.scss";
 
+const MARKDOWN_RENDERERS = {
+  h2: ({ node, ...props }) => (
+    <h2
+      className="font-poppins font-semibold mb-2 text-gray-900 text-2xl md:text-3xl lg:text-4xl capitalize"
+      {...props}
+    />
+  ),
+  h3: ({ node, ...props }) => (
+    <h3
+      className="font-poppins font-semibold mb-2 text-gray-900 text-1xl md:text-2xl lg:text-4xl capitalize"
+      {...props}
+    />
+  ),
+  h4: ({ node, ...props }) => (
+    <h4
+      className="font-poppins font-semibold mb-2 text-gray-900 text-xl md:text-1xl lg:text-4xl capitalize"
+      {...props}
+    />
+  ),
+  p: ({ node, ...props }) => (
+    <p className="font-roboto text-md text-gray-800" {...props} />
+  ),
+  //This custom renderer changes how images are rendered
+  img: ({ node, ...props }) => (
+    <img
+      alt={props.alt}
+      title={props.title}
+      className="w-auto h-auto my-10 md:my-20"
+      src={`${API.host}${props.src}`}
+    />
+  ),
+};
+
 const BlogDetails = ({ blog }) => {
   const { Title = "", Description = "", Date = "xx/xx/xxxx", Content } = blog;
 
@@ -26,36 +59,7 @@ const BlogDetails = ({ blog }) => {
           <MarkDownRenderer
             content={Content}
             classList={style.content}
-            components={{
-              h2: ({ node, ...props }) => (
-                <h2
-                  className="font-poppins font-semibold mb-2 text-gray-900 text-2xl md:text-3xl lg:text-4xl capitalize"
-                  {...props}
-                />
-              ),
-              h3: ({ node, ...props }) => (
-                <h3
-                  className="font-poppins font-semibold mb-2 text-gray-900 text-1xl md:text-2xl lg:text-4xl capitalize"
-                  {...props}
-                />
-              ),
-              h4: ({ node, ...props }) => (
-                <h4
-                  className="font-poppins font-semibold mb-2 text-gray-900 text-xl md:text-1xl lg:text-4xl capitalize"
-                  {...props}
-                />
-              ),
-              img: ({ node, ...props }) => (
-                <img
-                  className="w-auto h-auto my-10 md:my-20"
-                  src={`${API.host}${props.src}`}
-                  prop={JSON.stringify(props)}
-                />
-              ),
-              p: ({ node, ...props }) => (
-                <p className="font-roboto text-md text-gray-800" {...props} />
-              ),
-            }}
+            components={MARKDOWN_RENDERERS}
           />
         </div>
       </div>
