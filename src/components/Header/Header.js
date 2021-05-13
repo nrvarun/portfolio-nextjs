@@ -39,7 +39,9 @@ const Header = () => {
               <Link href="/blogs">
                 <a
                   className={`${style.navLink} ${
-                    router.pathname === "/blogs" ? style.activeLink : ""
+                    router.pathname.indexOf("/blog") !== -1
+                      ? style.activeLink
+                      : ""
                   }`}
                 >
                   Blogs

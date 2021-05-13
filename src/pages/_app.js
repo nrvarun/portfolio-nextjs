@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }) {
             />
             <link
               rel="stylesheet"
-              href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto:300,400,500,600,700&display=swap"
+              href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700|Roboto:300,400,500,600,700&display=swap"
             />
             <meta name="theme-color" content="#000000" />
           </Head>

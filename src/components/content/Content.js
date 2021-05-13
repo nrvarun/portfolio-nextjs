@@ -7,11 +7,11 @@ const Content = ({ heading = "", subheading = "", desc = "" }) => {
         <h1 className="font-roboto uppercase font-bold text-4xl md:text-6xl lg:text-7xl">
           {heading}
         </h1>
-        <p className="font-lato text-sm text-right text-gray-400 absolute bottom-0 right-0">
+        <p className="font-poppins text-sm text-right text-gray-400 absolute bottom-0 right-0">
           {subheading}
         </p>
       </div>
-      <p className="font-lato text-1xl text-gray-400">{desc}</p>
+      <p className="font-poppins text-1xl text-gray-400">{desc}</p>
     </div>
   );
 };

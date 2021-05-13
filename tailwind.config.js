@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     fontFamily: {
       roboto: "Roboto, sans-serif",
-      lato: "Lato, sans-serif",
+      poppins: "Poppins, sans-serif",
     },
     fontSize: {
       xs: ".75rem",
