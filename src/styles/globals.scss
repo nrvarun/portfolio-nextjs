@@ -26,3 +26,11 @@
     margin: -60px 0 0 0;
   }
 }
+
+.text-shadow {
+  text-shadow: #f4f0d5 0.5rem 0.5rem;
+
+  &--small {
+    text-shadow: #f4f0d5 0.375rem 0.375rem;
+  }
+}

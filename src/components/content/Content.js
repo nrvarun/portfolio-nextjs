@@ -2,12 +2,12 @@ import React from "react";
 
 const Content = ({ heading = "", subheading = "", desc = "" }) => {
   return (
-    <div className="max-w-md m-auto lg:mx-5">
+    <div className="max-w-lg m-auto lg:mx-5">
       <div className="relative mb-4 mb-md-5">
-        <h1 className="font-roboto uppercase font-bold text-4xl md:text-6xl lg:text-7xl">
+        <h1 className="font-roboto uppercase font-bold text-4xl md:text-6xl lg:text-8xl text-shadow">
           {heading}
         </h1>
-        <p className="font-poppins text-sm text-right text-gray-400 absolute bottom-0 right-0">
+        <p className="font-poppins text-sm text-right text-gray-400">
           {subheading}
         </p>
       </div>

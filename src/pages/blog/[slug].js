@@ -1,6 +1,6 @@
 import BlogDetails from "@components/BlogDetails";
 import Landing from "@layouts/Landing";
-import { fetchBlogs, useBlog, useBlogs } from "Hooks/useBlogs";
+import { fetchBlog, fetchBlogs, useBlog } from "Hooks/useBlogs";
 import { useRouter } from "next/router";
 
 import { QueryClient } from "react-query";
