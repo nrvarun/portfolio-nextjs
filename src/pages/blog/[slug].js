@@ -19,7 +19,7 @@ export async function getStaticPaths() {
   const blogs = await fetchBlogs();
 
   return {
-    paths: blogs.map((blog) => `/blog/${blog.id}`),
+    paths: blogs.map((blog) => `/blog/${blog.slug}`),
     fallback: "blocking", // See the "fallback" section below
   };
 }

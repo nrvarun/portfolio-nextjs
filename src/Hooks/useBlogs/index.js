@@ -8,15 +8,15 @@ const fetchBlogs = async () => {
   return data;
 };
 
-const fetchBlog = async (id) => {
-  const res = await fetch(`${API.host}/blogs/${id}`);
+const fetchBlog = async (slug) => {
+  const res = await fetch(`${API.host}/blogs?slug=${slug}`);
   const data = await res.json();
 
-  return data;
+  return data[0];
 };
 
-const useBlog = (id) => {
-  return useQuery("blog", () => fetchBlog(id));
+const useBlog = (slug) => {
+  return useQuery("blog", () => fetchBlog(slug));
 };
 
 const useBlogs = () => {

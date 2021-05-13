@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <Landing>
-      <section className="flex flex-col items-center h-full">
+      <section className="flex flex-col items-center h-screen">
         <div className="m-auto">
           <div className="container m-auto">
             {isError ? (

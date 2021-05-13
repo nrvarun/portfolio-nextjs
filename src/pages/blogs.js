@@ -18,21 +18,24 @@ export default function Home() {
             </h1>
             <ul className="pt-10 md:pt-20 py-0 lg:w-2/3 m-auto">
               {data != null && data.length > 0 ? (
-                data.map(({ id, Title, Description, Date, Tag, Cover }) => (
-                  <li
-                    className="mb-10 pb-10 border-b-2 border-gray-200"
-                    key={id}
-                  >
-                    <Blog
-                      id={id}
-                      time={Date}
-                      title={Title}
-                      desc={Description}
-                      tags={Tag}
-                      cover={Cover}
-                    />
-                  </li>
-                ))
+                data.map(
+                  ({ id, slug, Title, Description, Date, Tag, Cover }) => (
+                    <li
+                      className="mb-10 pb-10 border-b-2 border-gray-200"
+                      key={id}
+                    >
+                      <Blog
+                        id={id}
+                        time={Date}
+                        title={Title}
+                        desc={Description}
+                        tags={Tag}
+                        cover={Cover}
+                        slug={slug}
+                      />
+                    </li>
+                  )
+                )
               ) : (
                 <p className="font-poppins text-center font-black text-md md:text-2xl lg:text-3xl text-gray-700 capitalize">
                   Nothing to see in here yet 🙃
