@@ -1,7 +1,10 @@
 import MarkDownRenderer from "@components/MarkdownRenderer";
 import { motion } from "framer-motion";
-import { API } from "Libs/Utils";
 import style from "./blogdetails.module.scss";
+
+import TimeAgo from "timeago-react"; // var TimeAgo = require('timeago-react');
+import { useRouter } from "next/router";
+import { fadeOut } from "Libs/animations";
 
 const MARKDOWN_RENDERERS = {
   h2: ({ node, ...props }) => (
@@ -36,34 +39,31 @@ const MARKDOWN_RENDERERS = {
   ),
 };
 
-const fadeOut = {
-  hidden: {
-    y: 20,
-    opacity: 0,
-  },
-  show: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-    },
-  },
-};
-
 const BlogDetails = ({ blog }) => {
-  const { Title = "", Description = "", Date = "xx/xx/xxxx", Content } = blog;
+  const router = useRouter();
+
+  const {
+    Title = "",
+    Description = "",
+    Date = "xx/xx/xxxx",
+    Content,
+    Tag,
+    Cover,
+  } = blog;
 
   return (
-    <section className="py-40 bg-gray-100 min-h-screen">
+    <section className="py-32 md:py-40 bg-gray-100 min-h-screen">
       <div className="container mx-auto">
-        <div className="text-center w-2/3 md:w-2/4 mx-auto">
+        <div className="text-center w-5/6 sm:w-3/4 xl:w-2/4 mx-auto">
           <motion.div
             initial="hidden"
             animate="show"
             variants={fadeOut}
-            className="mx-5 md:mx-10"
+            className="mx-5 md:mx-10 xl:mx-0"
           >
-            <p className="font-roboto text-xs text-gray-400 mb-2">{Date}</p>
+            <p className="font-roboto text-xs text-gray-400 mb-2">
+              <TimeAgo datetime={Date} locale="en" />
+            </p>
             <h2 className="font-poppins font-semibold text-gray text-2xl md:text-3xl lg:text-5xl lg:leading-normal mb-3 md:mb-8">
               {Title}
             </h2>
@@ -76,15 +76,15 @@ const BlogDetails = ({ blog }) => {
           initial="hidden"
           animate="show"
           variants={fadeOut}
-          className="w-2/3 mx-auto py-10 md:py-20"
+          className="w-full md:w-5/6 xl:w-2/3 mx-auto py-10 md:py-20"
         >
-          <div className="bg-red-300 h-80"></div>
+          <img src={Cover?.url} alt="" className="h-auto w-full object-cover" />
         </motion.div>
         <motion.div
           initial="hidden"
           animate="show"
           variants={fadeOut}
-          className="w-2/3 md:w-2/4 mx-auto py-10 md:pb-20"
+          className="w-3/4 md:w-2/3 xl:w-2/4 mx-auto py-10 md:pb-20"
         >
           <MarkDownRenderer
             content={Content}

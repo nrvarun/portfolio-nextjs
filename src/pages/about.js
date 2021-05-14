@@ -40,8 +40,13 @@ const About = () => {
       <section className="flex flex-col items-center h-full">
         <div className="container m-auto">
           <div className="relative m-auto w-3/4 md:w-2/4 xl:w-1/3">
-            <motion.div initial="hidden" animate="show" variants={fadeOut}>
-              <h2 className="section-heading -mt-32 sm:-mt-16 md:-mt-24 lg:-mt-10 pointer-events-none">
+            <motion.div
+              initial="hidden"
+              animate="show"
+              variants={fadeOut}
+              className="absolute top-0 left-0 right-0 lg:top-10"
+            >
+              <h2 className="section-heading pointer-events-none">
                 {data?.Heading}
               </h2>
             </motion.div>

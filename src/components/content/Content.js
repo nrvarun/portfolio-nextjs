@@ -1,46 +1,5 @@
 import { motion } from "framer-motion";
-
-const fadeOut = {
-  hidden: {
-    y: -30,
-    opacity: 0,
-  },
-  show: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-    },
-  },
-};
-
-const fadeOutRight = {
-  hidden: {
-    x: 30,
-    opacity: 0,
-  },
-  show: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-    },
-  },
-};
-
-const fadeOutReverse = {
-  hidden: {
-    y: 30,
-    opacity: 0,
-  },
-  show: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-    },
-  },
-};
+import { fadeOut, fadeOutReverse, fadeOutRight } from "Libs/animations";
 
 const Content = ({ heading = "", subheading = "", desc = "" }) => {
   return (
