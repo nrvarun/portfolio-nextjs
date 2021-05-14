@@ -30,7 +30,7 @@ const MARKDOWN_RENDERERS = {
       alt={props.alt}
       title={props.title}
       className="w-auto h-auto my-10 md:my-20"
-      src={`${API.host}${props.src}`}
+      src={`${props.src}`}
     />
   ),
 };
