@@ -19,6 +19,18 @@ function MyApp({ Component, pageProps }) {
       <QueryClientProvider client={queryClientRef.current}>
         <Hydrate state={pageProps.dehydratedState}>
           <Head>
+            {/* <!--  Preconnect to the fonts’ origin. --> */}
+            <link
+              rel="preconnect"
+              href="https://fonts.gstatic.com"
+              crossOrigin={true}
+            />
+            <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+            <link
+              rel="preload"
+              as="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700|Roboto:300,400,500,600,700&display=swap"
+            />
             <meta
               name="viewport"
               content="width=device-width, initial-scale=1"

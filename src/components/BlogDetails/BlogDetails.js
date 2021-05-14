@@ -1,4 +1,5 @@
 import MarkDownRenderer from "@components/MarkdownRenderer";
+import { motion } from "framer-motion";
 import { API } from "Libs/Utils";
 import style from "./blogdetails.module.scss";
 
@@ -35,6 +36,20 @@ const MARKDOWN_RENDERERS = {
   ),
 };
 
+const fadeOut = {
+  hidden: {
+    y: 20,
+    opacity: 0,
+  },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+    },
+  },
+};
+
 const BlogDetails = ({ blog }) => {
   const { Title = "", Description = "", Date = "xx/xx/xxxx", Content } = blog;
 
@@ -42,7 +57,12 @@ const BlogDetails = ({ blog }) => {
     <section className="py-40 bg-gray-100 min-h-screen">
       <div className="container mx-auto">
         <div className="text-center w-2/3 md:w-2/4 mx-auto">
-          <div className="mx-5 md:mx-10">
+          <motion.div
+            initial="hidden"
+            animate="show"
+            variants={fadeOut}
+            className="mx-5 md:mx-10"
+          >
             <p className="font-roboto text-xs text-gray-400 mb-2">{Date}</p>
             <h2 className="font-poppins font-semibold text-gray text-2xl md:text-3xl lg:text-5xl lg:leading-normal mb-3 md:mb-8">
               {Title}
@@ -50,18 +70,28 @@ const BlogDetails = ({ blog }) => {
             <p className="font-roboto font-400 text-sm text-gray-500 leading-normal mb-5 md:mb-8 w-3/4 mx-auto">
               {Description}
             </p>
-          </div>
+          </motion.div>
         </div>
-        <div className="w-2/3 mx-auto py-10 md:py-20">
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={fadeOut}
+          className="w-2/3 mx-auto py-10 md:py-20"
+        >
           <div className="bg-red-300 h-80"></div>
-        </div>
-        <div className="w-2/3 md:w-2/4 mx-auto py-10 md:pb-20">
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={fadeOut}
+          className="w-2/3 md:w-2/4 mx-auto py-10 md:pb-20"
+        >
           <MarkDownRenderer
             content={Content}
             classList={style.content}
             components={MARKDOWN_RENDERERS}
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
