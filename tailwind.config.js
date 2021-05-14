@@ -2,9 +2,9 @@ module.exports = {
   // mode: "jit",
   purge: {
     content: [
-      "./src/pages/**/*.{js,ts,jsx,tsx}",
-      "./src/layouts/**/*.{js,ts,jsx,tsx}",
-      "./src/components/**/*.{js,ts,jsx,tsx}",
+      // "./src/pages/**/*.{js,ts,jsx,tsx}",
+      // "./src/layouts/**/*.{js,ts,jsx,tsx}",
+      // "./src/components/**/*.{js,ts,jsx,tsx}",
     ],
     options: {
       safelist: ["text-shadow", "section-heading"],
