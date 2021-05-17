@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useSocialLinks } from "Hooks";
+import { useSocial } from "Hooks";
 
 import style from "./header.module.scss";
 
@@ -28,7 +28,7 @@ const listItem = {
 };
 
 const SocialLinks = () => {
-  const { data } = useSocialLinks();
+  const { data } = useSocial();
 
   return (
     <>

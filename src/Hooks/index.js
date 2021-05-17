@@ -1,2 +1,2 @@
 export * from "./useLandingPage";
-export * from "./useSocialLinks";
+export * from "./useSocial";

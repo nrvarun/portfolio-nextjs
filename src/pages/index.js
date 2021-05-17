@@ -7,6 +7,7 @@ import { dehydrate } from "react-query/hydration";
 
 export default function Home() {
   const { data, isFetched, isError } = useLandingPage();
+  console.log(useLandingPage());
   const { Heading = "", SubHeading = "", Description = "" } = data;
 
   return (
