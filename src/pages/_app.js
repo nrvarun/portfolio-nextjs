@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Hydrate } from "react-query/hydration";
@@ -7,6 +7,9 @@ import { ReactQueryDevtools } from "react-query/devtools";
 
 import "styles/globals.scss";
 import "tailwindcss/tailwind.css";
+import { useRouter } from "next/router";
+
+import * as gtag from "../Libs/gtags";
 
 function MyApp({ Component, pageProps }) {
   const queryClientRef = useRef();
@@ -14,33 +17,21 @@ function MyApp({ Component, pageProps }) {
     queryClientRef.current = new QueryClient();
   }
 
+  const router = useRouter();
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url);
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <>
       <QueryClientProvider client={queryClientRef.current}>
         <Hydrate state={pageProps.dehydratedState}>
-          <Head>
-            {/* <!--  Preconnect to the fonts’ origin. --> */}
-            <link
-              rel="preconnect"
-              href="https://fonts.gstatic.com"
-              crossOrigin={true}
-            />
-            <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-            <link
-              rel="preload"
-              as="stylesheet"
-              href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700|Roboto:300,400,500,600,700&display=swap"
-            />
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1"
-            />
-            <link
-              rel="stylesheet"
-              href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700|Roboto:300,400,500,600,700&display=swap"
-            />
-            <meta name="theme-color" content="#000000" />
-          </Head>
           <Component {...pageProps} />
         </Hydrate>
         <ReactQueryDevtools />
