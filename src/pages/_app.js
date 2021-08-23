@@ -32,6 +32,12 @@ function MyApp({ Component, pageProps }) {
     <>
       <QueryClientProvider client={queryClientRef.current}>
         <Hydrate state={pageProps.dehydratedState}>
+          <Head>
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            />
+          </Head>
           <Component {...pageProps} />
         </Hydrate>
         <ReactQueryDevtools />
