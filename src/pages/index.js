@@ -6,8 +6,8 @@ import { QueryClient } from "react-query";
 import { dehydrate } from "react-query/hydration";
 
 export default function Home() {
-  const { data, isFetched, isError } = useLandingPage();
-  console.log(useLandingPage());
+  const { data, isError } = useLandingPage();
+
   const { Heading = "", SubHeading = "", Description = "" } = data;
 
   return (
