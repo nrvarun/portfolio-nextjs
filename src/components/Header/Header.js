@@ -46,7 +46,7 @@ const Header = () => {
             <motion.li className="mr-4" variants={listItem}>
               <p
                 className={`p-1 text-xs font-roboto font-semibold border-dashed text-white rounded-md ${
-                  process.env.NEXT_PUBLIC_ENV_TYPE === "LOCAL"
+                  process.env.NEXT_PUBLIC_ENV_TYPE === "PROD"
                     ? "bg-green-500"
                     : "bg-red-500"
                 }`}
