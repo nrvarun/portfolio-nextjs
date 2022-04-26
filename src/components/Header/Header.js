@@ -44,6 +44,17 @@ const Header = () => {
             className="flex"
           >
             <motion.li className="mr-4" variants={listItem}>
+              <p
+                className={`p-1 text-xs font-roboto font-semibold border-dashed text-white rounded-md ${
+                  process.env.NEXT_PUBLIC_ENV_TYPE === "LOCAL"
+                    ? "bg-green-500"
+                    : "bg-red-500"
+                }`}
+              >
+                {process.env.NEXT_PUBLIC_ENV_TYPE}
+              </p>
+            </motion.li>
+            <motion.li className="mr-4" variants={listItem}>
               <Link href="/">
                 <a
                   className={`${style.navLink} ${
